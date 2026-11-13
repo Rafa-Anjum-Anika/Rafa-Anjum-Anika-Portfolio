@@ -1,0 +1,449 @@
+/* ==========================================================
+   Academic Portfolio – Rafa Anjum Anika
+   Colour palette: Space Cadet, Slate gray, Tan, Coffee, Caput Mortuum
+   ========================================================== */
+
+/* ---- Root / Variables ---- */
+:root {
+  --space-cadet: #2e3a62;
+  --slate-gray: #4a5568;
+  --tan: #c4a674;
+  --coffee: #7b5a36;
+  --caput-mortuum: #57284c;
+  --light-bg: #f7fafc;
+  --text-primary: #2d3748;
+  --text-secondary: #4a5568;
+}
+
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  line-height: 1.6;
+  color: var(--text-primary);
+  background-color: var(--light-bg);
+}
+
+/* ---- Typography ---- */
+h1, h2, h3, h4 {
+  font-family: 'Merriweather', serif;
+  margin-top: 0;
+  line-height: 1.3;
+}
+
+h1 { font-size: 2.8rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.5rem; }
+p  { font-size: 1rem; }
+
+/* ---- Buttons ---- */
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.6rem;
+  border-radius: 4px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.2s ease, transform 0.1s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.btn--primary {
+  background-color: var(--space-cadet);
+  color: #fff;
+}
+.btn--primary:hover {
+  background-color: #1a2541;
+  transform: translateY(-1px);
+}
+
+.btn--secondary {
+  background-color: transparent;
+  color: var(--space-cadet);
+  border: 2px solid var(--space-cadet);
+}
+.btn--secondary:hover {
+  background-color: var(--space-cadet);
+  color: #fff;
+}
+
+.btn--large {
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+}
+
+/* ---- Sections ---- */
+.section {
+  padding: 4rem 1rem;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.section__header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section__title {
+  color: var(--space-cadet);
+  margin-bottom: 0.5rem;
+}
+
+.section__divider {
+  width: 48px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--tan), var(--coffee));
+  margin: 0.5rem auto 0;
+  border-radius: 2px;
+}
+
+/* ---- Navigation ---- */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(46, 58, 98, 0.95);
+  backdrop-filter: blur(8px);
+  z-index: 1000;
+}
+
+.navbar__inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 1rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar__logo {
+  font-family: 'Merriweather', serif;
+  font-size: 1.4rem;
+  color: #fff;
+  text-decoration: none;
+}
+
+.navbar__toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.navbar__toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: #fff;
+  margin: 4px 0;
+  transition: transform 0.3s ease;
+}
+
+.navbar__list {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.navbar__link {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.navbar__link:hover {
+  color: var(--tan);
+}
+
+/* Hero */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 6rem 1rem 2rem;
+  background: linear-gradient(135deg, var(--space-cadet), var(--caput-mortuum));
+  color: #fff;
+}
+
+.hero__container {
+  max-width: 720px;
+}
+
+.hero__tagline {
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.hero__name {
+  font-size: 2rem;
+  margin: 0.5rem 0 1rem 0;
+  /* display: block; already block-level */
+}
+
+.hero__subtitle {
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+/* Profile photo in hero */
+.hero__photo {
+  margin-top: 2rem;
+  max-width: 220px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero__photo img {
+  width: 100%;
+  border-radius: 50%;
+  border: 4px solid #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.hero__photo-caption {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #ddd;
+  font-style: italic;
+}
+
+/* ---- About Me ---- */
+.about__description p {
+  margin-bottom: 1.5rem;
+}
+
+/* ---- Timeline (Education) ---- */
+.timeline {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--space-cadet);
+  transform: translateX(-50%);
+}
+
+.timeline__item {
+  padding: 2rem 0;
+  display: flex;
+  align-items: center;
+  width: 50%;
+  float: left;
+}
+
+.timeline__item:nth-child(odd) {
+  float: right;
+  clear: right;
+}
+
+.timeline__dot {
+  position: absolute;
+  left: 50%;
+  top: 2rem;
+  width: 12px;
+  height: 12px;
+  background: var(--tan);
+  border-radius: 50%;
+  transform: translateX(-50%);
+}
+
+.timeline__content {
+  background: #fff;
+  padding: 1.5rem 2rem;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  width: 85%;
+}
+
+.timeline__content:nth-child(odd) {
+  float: left;
+}
+
+.timeline__degree {
+  color: var(--space-cadet);
+  margin-bottom: 0.3rem;
+}
+
+.timeline__institution {
+  color: var(--slate-gray);
+  margin-bottom: 0.3rem;
+  font-size: 0.95rem;
+}
+
+.timeline__year {
+  color: var(--slate-gray);
+  font-size: 0.85rem;
+}
+
+/* Clearfix for timeline */
+.timeline::after { content: ""; display: table; clear: both; }
+
+/* ---- Research Interests ---- */
+.research__list {
+  list-style: none;
+  margin-top: 1rem;
+  padding-left: 1.5rem;
+}
+
+.research__list li {
+  margin-bottom: 0.5rem;
+  position: relative;
+}
+
+.research__list li::before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  color: var(--tan);
+}
+
+/* ---- Skills Columns ---- */
+.skills__columns {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.skills__column h3 {
+  color: var(--space-cadet);
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+.skills__list {
+  list-style: none;
+}
+
+.skills__list li {
+  margin-bottom: 0.4rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.skills__list li::before {
+  content: "▸";
+  color: var(--tan);
+  font-size: 0.7rem;
+}
+
+/* ---- Contact Links ---- */
+.contact__links {
+  list-style: none;
+  margin-top: 2rem;
+}
+
+.contact__link {
+  color: var(--slate-gray);
+  text-decoration: none;
+  font-size: 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: color 0.2s ease;
+}
+
+.contact__link:hover {
+  color: var(--tan);
+}
+
+.contact__link svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* ---- Images in sections ---- */
+.speaking-image {
+  width: 100%;
+  max-width: 200px;
+  margin-top: 1rem;
+  border-radius: 6px;
+  border: 2px solid var(--tan);
+}
+
+.award-crest {
+  width: 100%;
+  max-width: 180px;
+  margin: 0.5rem auto;
+  display: block;
+  border-radius: 6px;
+  border: 2px solid var(--coffee);
+}
+
+/* ---- Footer ---- */
+.footer {
+  text-align: center;
+  padding: 2rem;
+  color: var(--slate-gray);
+  font-size: 0.9rem;
+  background: var(--space-cadet);
+  color: #fff;
+  margin-top: 4rem;
+}
+
+/* ---- Mobile Navigation ---- */
+@media (max-width: 768px) {
+  .navbar__toggle {
+    display: block;
+  }
+
+  .navbar__list {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 260px;
+    background: var(--space-cadet);
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-top: 6rem;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+  }
+
+  .navbar__list.open {
+    transform: translateX(0);
+  }
+
+  .navbar__list li {
+    width: 100%;
+    margin: 1rem 0;
+  }
+
+  .navbar__link {
+    display: block;
+    width: 100%;
+    padding: 0.8rem 1rem;
+    color: #fff;
+  }
+
+  .hero__photo {
+    max-width: 160px;
+  }
+}
